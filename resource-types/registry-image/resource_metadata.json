@@ -1,0 +1,6 @@
+{
+  "type": "registry-image",
+  "version": "0.9.0",
+  "privileged": false,
+  "unique_version_history": false
+}

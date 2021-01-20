@@ -30,15 +30,9 @@ COPY --from=0 /go/plugins/bin/* /usr/local/concourse/bin/
 # add resource-types
 COPY resource-types /usr/local/concourse/resource-types
 
-# enable DNS proxy to support Docker's 127.x.x.x DNS server
-ENV CONCOURSE_GARDEN_DNS_PROXY_ENABLE         true
-ENV CONCOURSE_WORKER_GARDEN_DNS_PROXY_ENABLE  true
-
 # auto-wire work dir for 'worker' and 'quickstart'
 ENV CONCOURSE_WORK_DIR                /worker-state
 ENV CONCOURSE_WORKER_WORK_DIR         /worker-state
-# set containerd backend
-ENV CONCOURSE_GARDEN_USE_CONTAINERD   true
 
 # volume for non-aufs/etc. mount for baggageclaim's driver
 VOLUME /worker-state
